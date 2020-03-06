@@ -16,8 +16,8 @@ class Grid {
 
   // Method
   drawGrid (screenWidth, screenHeight) {
-    stroke(0);
-    strokeWeight(0.5);
+    stroke(100);
+    strokeWeight(1);
     fill(0);
     for (let i = 0; i <= this.col; i++) {
       line((i * this.boxWidth), 0, (i * this.boxWidth), this.boxWidth * (this.row));

@@ -1,11 +1,12 @@
 class Grid {
   
-  constructor(boxWidth, screenWidth, screenHeight) {
+  constructor(boxWidth) {
     this.boxWidth = boxWidth;
-    
-    this.row = (screenWidth / boxWidth);  
-    this.col = (screenHeight / boxWidth);
-    console.log(this.row);
+  }
+  
+  makeGrid(screenWidth, screenHeight){
+    this.row = Math.floor(screenHeight / this.boxWidth);  
+    this.col = Math.floor(screenWidth / this.boxWidth);
   }
   
   //// Getter
@@ -16,11 +17,13 @@ class Grid {
   // Method
   drawGrid (screenWidth, screenHeight) {
     stroke(0);
+    strokeWeight(0.5);
+    fill(0);
     for (let i = 0; i <= this.col; i++) {
-      line(i * this.boxWidth, 0, i * this.boxWidth, screenHeight);    
+      line((i * this.boxWidth), 0, (i * this.boxWidth), this.boxWidth * (this.row));
     }
     for (let i = 0; i <= this.row; i++) {
-      line(0, i * this.boxWidth, screenWidth, i * this.boxWidth);    
+      line(0, (i * this.boxWidth), this.boxWidth * (this.col), (i * this.boxWidth));    
     }
   }
   

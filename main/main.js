@@ -1,6 +1,7 @@
 var screenWidth;
 var screenHeight;
 const b1 = new Button(10, 10, 50, 200, 0, "run", "Run");
+const grid = new Grid(30);
 
 function setup() {
   frameRate(60);
@@ -9,10 +10,11 @@ function setup() {
    screenHeight  = displayHeight - 143; 
   createCanvas(screenWidth, screenHeight);
   textAlign(CENTER);
-  console.log(screenWidth);
+  //console.log(screenWidth);
+  
+  grid.makeGrid(screenWidth, screenHeight);
 }
 
-const grid = new Grid(30, screenWidth, screenHeight);
 
 function draw() {
   background(240);
